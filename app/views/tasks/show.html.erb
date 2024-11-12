@@ -1,0 +1,8 @@
+<div class="container w-50 p-4 mx-auto border bg-white rounded mt-5">
+  <h2 class="text-primary text-center mb-3"><%= @task.title %></h2>
+  <p class="text-secondary text-center"><%= @task.details %></p>
+
+  <div class="text-center mt-4">
+    <%= link_to "Back to tasks list", tasks_path, class: "btn btn-primary text-white text-decoration-none" %>
+  </div>
+</div>

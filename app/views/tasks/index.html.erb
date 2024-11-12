@@ -1,0 +1,25 @@
+<body class="bg-light">
+  <div class="container w-25 p-3 mx-auto border bg-white rounded m-20">
+    <h1 class="text-primary text-center">Tasks Index!</h1>
+
+    <div class="d-flex justify-content-center">
+      <ul class="list-unstyled w-100">
+        <% @tasks.each do |task| %>
+          <li class="d-flex justify-content-between align-items-center py-2 my-2 border-bottom">
+            <%= link_to task.title, task_path(task), class: "text-dark text-decoration-none" %>
+            <div>
+              <%= link_to "", edit_task_path(task), class: "fa-regular fa-pen-to-square text-dark me-2" %>
+              <%= link_to "", task_path(task),
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                    class: "fa-solid fa-trash text-danger" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="text-center mt-3">
+      <%= link_to "Add a new task", new_task_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</body>
